@@ -1,5 +1,5 @@
 ﻿using FluentMermaid.ClassDiagram.Interfaces;
-using FluentMermaid.Flowchart.Enum;
+using FluentMermaid.Enums;
 
 namespace FluentMermaid.ClassDiagram;
 

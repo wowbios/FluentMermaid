@@ -2,8 +2,8 @@
 using FluentMermaid.ClassDiagram.Interfaces;
 using FluentMermaid.ClassDiagram.Interfaces.ClassMembers;
 using FluentMermaid.ClassDiagram.Nodes;
-using FluentMermaid.Flowchart.Enum;
-using FluentMermaid.Flowchart.Extensions;
+using FluentMermaid.Enums;
+using FluentMermaid.Extensions;
 
 namespace FluentMermaid.ClassDiagram;
 
