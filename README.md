@@ -27,9 +27,9 @@ Mermaid.js fluent api for .NET
    9. [SequenceNumbers](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=sequencenumbers) :heavy_check_mark:
    10. [Participant menus](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=actor-menus) :heavy_check_mark:
 3. [Class diagram](https://mermaid-js.github.io/mermaid/#/classDiagram) :x:
-   1. [Direction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=setting-the-direction-of-the-diagram) :x:
-   2. [Classes](https://mermaid-js.github.io/mermaid/#/classDiagram?id=define-a-class) :x:
-   3. [Class members](https://mermaid-js.github.io/mermaid/#/classDiagram?id=defining-members-of-a-class) :x:
+   1. [Direction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=setting-the-direction-of-the-diagram) :heavy_check_mark:
+   2. [Classes](https://mermaid-js.github.io/mermaid/#/classDiagram?id=define-a-class) :heavy_check_mark:
+   3. [Class members](https://mermaid-js.github.io/mermaid/#/classDiagram?id=defining-members-of-a-class) :heavy_check_mark:
    4. [Relationships](https://mermaid-js.github.io/mermaid/#/classDiagram?id=defining-relationship) :x:
    5. [Cardinality / Multiplicity on relations](https://mermaid-js.github.io/mermaid/#/classDiagram?id=cardinality-multiplicity-on-relations) :x:
    6. [Annotations](https://mermaid-js.github.io/mermaid/#/classDiagram?id=annotations-on-classes) :x:

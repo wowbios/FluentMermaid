@@ -1,5 +1,4 @@
-﻿using FluentMermaid.Flowchart.Interfaces;
-using FluentMermaid.SequenceDiagram.Enum;
+﻿using FluentMermaid.SequenceDiagram.Enum;
 
 namespace FluentMermaid.SequenceDiagram.Interfaces;
 

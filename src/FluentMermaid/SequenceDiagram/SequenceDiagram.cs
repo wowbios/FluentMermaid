@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Text;
-using FluentMermaid.Flowchart.Extensions;
 using FluentMermaid.SequenceDiagram.Actions;
 using FluentMermaid.SequenceDiagram.Enum;
 using FluentMermaid.SequenceDiagram.Interfaces;

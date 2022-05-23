@@ -1,6 +1,5 @@
 ﻿using System.Text;
-using FluentMermaid.Flowchart.Extensions;
-using FluentMermaid.Flowchart.Interfaces;
+using FluentMermaid.Extensions;
 
 namespace FluentMermaid.Flowchart.Nodes.Interaction;
 
