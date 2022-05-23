@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using FluentMermaid.Flowchart.Interfaces;
 using FluentMermaid.Flowchart.Interfaces.Styling;
 
 namespace FluentMermaid.Flowchart.Nodes.Styling;

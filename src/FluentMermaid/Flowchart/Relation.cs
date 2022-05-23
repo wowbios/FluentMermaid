@@ -1,8 +1,7 @@
 ﻿using System.Text;
+using FluentMermaid.Extensions;
 using FluentMermaid.Flowchart.Enum;
 using FluentMermaid.Flowchart.Extensions;
-using FluentMermaid.Flowchart.Interfaces;
-using FluentMermaid.Flowchart.Nodes;
 
 namespace FluentMermaid.Flowchart;
 
