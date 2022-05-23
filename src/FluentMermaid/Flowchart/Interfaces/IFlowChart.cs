@@ -1,4 +1,4 @@
-﻿using FluentMermaid.Flowchart.Enum;
+﻿using FluentMermaid.Enums;
 using FluentMermaid.Flowchart.Interfaces.Styling;
 
 namespace FluentMermaid.Flowchart.Interfaces;

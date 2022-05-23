@@ -1,4 +1,4 @@
-﻿namespace FluentMermaid.Flowchart.Enum;
+﻿namespace FluentMermaid.Enums;
 
 public enum Orientation
 {

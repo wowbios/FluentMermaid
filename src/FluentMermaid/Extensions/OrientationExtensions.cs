@@ -1,6 +1,6 @@
-﻿using FluentMermaid.Flowchart.Enum;
+﻿using FluentMermaid.Enums;
 
-namespace FluentMermaid.Flowchart.Extensions;
+namespace FluentMermaid.Extensions;
 
 internal static class OrientationExtensions
 {
