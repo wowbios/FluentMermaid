@@ -19,6 +19,7 @@ Mermaid.js fluent api for .NET
    9. Styling
       1. [Nodes](https://mermaid-js.github.io/mermaid/#/flowchart?id=styling-a-node) :heavy_check_mark:
       2. [Css](https://mermaid-js.github.io/mermaid/#/flowchart?id=css-classes) :heavy_check_mark:
+   10. Fluent API :x:
 2. [Sequence diagram](https://mermaid-js.github.io/mermaid/#/sequenceDiagram) :heavy_check_mark:
    1. [Syntax](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=syntax) :heavy_check_mark:
    2. [Messages](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=messages) :heavy_check_mark:
@@ -30,6 +31,7 @@ Mermaid.js fluent api for .NET
    8. [Background highlighting](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=background-highlighting) :heavy_check_mark:
    9. [SequenceNumbers](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=sequencenumbers) :heavy_check_mark:
    10. [Participant menus](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=actor-menus) :heavy_check_mark:
+   11. Fluent API :x:
 3. [Class diagram](https://mermaid-js.github.io/mermaid/#/classDiagram) :x:
    1. [Direction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=setting-the-direction-of-the-diagram) :heavy_check_mark:
    2. [Classes](https://mermaid-js.github.io/mermaid/#/classDiagram?id=define-a-class) :heavy_check_mark:
@@ -39,6 +41,7 @@ Mermaid.js fluent api for .NET
    6. [Annotations](https://mermaid-js.github.io/mermaid/#/classDiagram?id=annotations-on-classes) :x:
    7. [Interaction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=interaction) :x:
    8. [Styling](https://mermaid-js.github.io/mermaid/#/classDiagram?id=styling) :x:
+   9. Fluent API :x:
 4. [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram) :x:
 5. [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram) :x:
 6. [User journey](https://mermaid-js.github.io/mermaid/#/user-journey) :x:
