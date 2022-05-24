@@ -1,5 +1,7 @@
 # FluentMermaid
+![GitHub](https://img.shields.io/github/license/wowbios/FluentMermaid)
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/FluentMermaid)
+
 
 Mermaid.js fluent api for .NET
 
