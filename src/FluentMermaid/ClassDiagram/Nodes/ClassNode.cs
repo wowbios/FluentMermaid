@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using FluentMermaid.ClassDiagram.Enums;
 using FluentMermaid.ClassDiagram.Interfaces;
 using FluentMermaid.ClassDiagram.Interfaces.ClassMembers;
 
@@ -15,16 +16,16 @@ internal class ClassNode : IClass
     
     public ITypeName Name { get; }
 
-    public IClassMemberFunction AddFunction(string name, ITypeName? returnType, params FunctionArgument[] arguments)
+    public IClassMemberFunction AddFunction(string name, ITypeName? returnType, Visibility? visibility, params FunctionArgument[] arguments)
     {
-        var member = new ClassMemberFunctionNode(name, arguments, returnType);
+        var member = new ClassMemberFunctionNode(name, arguments, returnType, visibility);
         _members.Add(member);
         return member;
     }
 
-    public IClassMemberProperty AddProperty(string name, ITypeName? type)
+    public IClassMemberProperty AddProperty(string name, ITypeName? type, Visibility? visibility)
     {
-        var member = new ClassMemberPropertyNode(name, type);
+        var member = new ClassMemberPropertyNode(name, type, visibility);
         _members.Add(member);
         return member;
     }
