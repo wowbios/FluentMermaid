@@ -8,6 +8,8 @@ namespace FluentMermaid.ClassDiagram.Interfaces;
 public interface IClass : IRenderTo<StringBuilder>
 {
     ITypeName Name { get; }
+    
+    string? Annotation { get; }
 
     IClassMemberFunction AddFunction(string name, ITypeName? returnType, Visibility? visibility, params FunctionArgument[] arguments);
 

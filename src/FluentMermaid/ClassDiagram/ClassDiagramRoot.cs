@@ -20,11 +20,11 @@ internal class ClassDiagramRoot : IClassDiagram
 
     public Orientation Orientation { get; }
 
-    public IClass AddClass(ITypeName typeName)
+    public IClass AddClass(ITypeName typeName, string? annotation)
     {
         _ = typeName ?? throw new ArgumentNullException(nameof(typeName));
         
-        var @class = new ClassNode(typeName);
+        var @class = new ClassNode(typeName, annotation);
         _classes.Add(@class);
         return @class;
     }

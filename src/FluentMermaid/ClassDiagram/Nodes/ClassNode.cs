@@ -9,12 +9,15 @@ internal class ClassNode : IClass
 {
     private readonly List<IClassMember> _members = new();
     
-    public ClassNode(ITypeName typeName)
+    public ClassNode(ITypeName typeName, string? annotation)
     {
         Name = typeName ?? throw new ArgumentNullException(nameof(typeName));
+        Annotation = annotation;
     }
     
     public ITypeName Name { get; }
+
+    public string? Annotation { get; }
 
     public IClassMemberFunction AddFunction(string name, ITypeName? returnType, Visibility? visibility, params FunctionArgument[] arguments)
     {
@@ -46,5 +49,16 @@ internal class ClassNode : IClass
         }
 
         builder.AppendLine();
+
+        if (!string.IsNullOrWhiteSpace(Annotation))
+        {
+            builder
+                .Append("<<")
+                .Append(Annotation)
+                .Append(">> ");
+            
+            Name.RenderTo(builder);
+            builder.AppendLine();
+        }
     }
 }
