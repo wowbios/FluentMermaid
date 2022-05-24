@@ -9,11 +9,15 @@ public interface IRelation : IRenderTo<StringBuilder>
     
     IClass To { get; }
     
+    Cardinality? FromCardinality { get; }
+    
     Relationship? FromRelation { get; }
     
     Link Link { get; }
     
     Relationship? ToRelation { get; }
+    
+    Cardinality? ToCardinality { get; }
     
     string? Label { get; }
 }

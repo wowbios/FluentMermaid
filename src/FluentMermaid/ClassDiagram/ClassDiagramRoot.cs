@@ -30,10 +30,12 @@ internal class ClassDiagramRoot : IClassDiagram
     }
 
     public IRelation Relation(
-        IClass @from,
+        IClass from,
         IClass to,
         Relationship? relationshipFrom,
+        Cardinality? cardinalityFrom,
         Relationship? relationshipTo,
+        Cardinality? cardinalityTo,
         Link link,
         string? label)
     {
@@ -41,7 +43,9 @@ internal class ClassDiagramRoot : IClassDiagram
             from,
             to,
             relationshipFrom,
+            cardinalityFrom,
             link,
+            cardinalityTo,
             relationshipTo,
             label);
         _relations.Add(relation);

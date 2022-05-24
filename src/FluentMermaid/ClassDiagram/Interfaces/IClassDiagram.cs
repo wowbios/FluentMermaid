@@ -11,7 +11,9 @@ public interface IClassDiagram
         IClass from,
         IClass to,
         Relationship? relationshipFrom,
+        Cardinality? cardinalityFrom,
         Relationship? relationshipTo,
+        Cardinality? cardinalityTo,
         Link link,
         string? label);
 
