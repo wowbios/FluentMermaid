@@ -9,16 +9,19 @@ internal class ClassNode : IClass
 {
     private readonly List<IClassMember> _members = new();
     
-    public ClassNode(ITypeName typeName, string? annotation)
+    public ClassNode(ITypeName typeName, string? annotation, string? cssClass)
     {
         Name = typeName ?? throw new ArgumentNullException(nameof(typeName));
         Annotation = annotation;
+        CssClass = cssClass;
     }
     
     public ITypeName Name { get; }
 
     public string? Annotation { get; }
-    
+
+    public string? CssClass { get; }
+
     private ILink? Link { get; set; }
     
     private ICallback? Callback { get; set; }
@@ -57,6 +60,7 @@ internal class ClassNode : IClass
        RenderAnnotation(builder);
        Link?.RenderTo(builder);
        Callback?.RenderTo(builder);
+       RenderCssClass(builder);
     }
 
     private void RenderClass(StringBuilder builder)
@@ -88,5 +92,17 @@ internal class ClassNode : IClass
             
         Name.RenderTo(builder);
         builder.AppendLine();
+    }
+
+    private void RenderCssClass(StringBuilder builder)
+    {
+        if (string.IsNullOrWhiteSpace(CssClass))
+            return;
+        
+        builder
+            .Append("cssClass \"")
+            .Append(Name.Name)
+            .Append("\" ")
+            .AppendLine(CssClass);
     }
 }
