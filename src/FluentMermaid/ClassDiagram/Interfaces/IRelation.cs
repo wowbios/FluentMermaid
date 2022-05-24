@@ -13,7 +13,7 @@ public interface IRelation : IRenderTo<StringBuilder>
     
     Relationship? FromRelation { get; }
     
-    Link Link { get; }
+    RelationLink RelationLink { get; }
     
     Relationship? ToRelation { get; }
     

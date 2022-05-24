@@ -36,7 +36,7 @@ internal class ClassDiagramRoot : IClassDiagram
         Cardinality? cardinalityFrom,
         Relationship? relationshipTo,
         Cardinality? cardinalityTo,
-        Link link,
+        RelationLink relationLink,
         string? label)
     {
         var relation = new RelationNode(
@@ -44,7 +44,7 @@ internal class ClassDiagramRoot : IClassDiagram
             to,
             relationshipFrom,
             cardinalityFrom,
-            link,
+            relationLink,
             cardinalityTo,
             relationshipTo,
             label);

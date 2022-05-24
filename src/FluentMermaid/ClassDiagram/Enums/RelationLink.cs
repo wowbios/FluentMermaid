@@ -1,6 +1,6 @@
 ﻿namespace FluentMermaid.ClassDiagram.Enums;
 
-public enum Link
+public enum RelationLink
 {
     Solid,
     Dashed

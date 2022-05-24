@@ -18,6 +18,10 @@ internal class ClassNode : IClass
     public ITypeName Name { get; }
 
     public string? Annotation { get; }
+    
+    private ILink? Link { get; set; }
+    
+    private ICallback? Callback { get; set; }
 
     public IClassMemberFunction AddFunction(string name, ITypeName? returnType, Visibility? visibility, params FunctionArgument[] arguments)
     {
@@ -33,7 +37,29 @@ internal class ClassNode : IClass
         return member;
     }
 
+    public ICallback SetCallback(string function, string? tooltip)
+    {
+        var callback = new Callback(this, function, tooltip);
+        Callback = callback;
+        return callback;
+    }
+
+    public ILink SetLink(Uri url, string? tooltip)
+    {
+        var link = new Link(this, url, tooltip);
+        Link = link;
+        return link;
+    }
+
     public void RenderTo(StringBuilder builder)
+    {
+       RenderClass(builder);
+       RenderAnnotation(builder);
+       Link?.RenderTo(builder);
+       Callback?.RenderTo(builder);
+    }
+
+    private void RenderClass(StringBuilder builder)
     {
         builder.Append("class ");
         Name.RenderTo(builder);
@@ -47,18 +73,20 @@ internal class ClassNode : IClass
             
             builder.Append("}");
         }
-
         builder.AppendLine();
+    }
 
-        if (!string.IsNullOrWhiteSpace(Annotation))
-        {
-            builder
-                .Append("<<")
-                .Append(Annotation)
-                .Append(">> ");
+    private void RenderAnnotation(StringBuilder builder)
+    {
+        if (string.IsNullOrWhiteSpace(Annotation))
+            return;
+        
+        builder
+            .Append("<<")
+            .Append(Annotation)
+            .Append(">> ");
             
-            Name.RenderTo(builder);
-            builder.AppendLine();
-        }
+        Name.RenderTo(builder);
+        builder.AppendLine();
     }
 }

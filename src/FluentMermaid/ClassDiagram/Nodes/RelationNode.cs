@@ -12,7 +12,7 @@ internal class RelationNode : IRelation
         IClass to,
         Relationship? fromRelation,
         Cardinality? fromCardinality,
-        Link link,
+        RelationLink relationLink,
         Cardinality? toCardinality,
         Relationship? toRelation,
         string? label)
@@ -21,7 +21,7 @@ internal class RelationNode : IRelation
         To = to;
         FromRelation = fromRelation;
         FromCardinality = fromCardinality;
-        Link = link;
+        RelationLink = relationLink;
         ToCardinality = toCardinality;
         ToRelation = toRelation;
         Label = label;
@@ -35,7 +35,7 @@ internal class RelationNode : IRelation
 
     public Relationship? FromRelation { get; }
     
-    public Link Link { get; }
+    public RelationLink RelationLink { get; }
     
     public Relationship? ToRelation { get; }
     
@@ -59,7 +59,7 @@ internal class RelationNode : IRelation
         builder
             .Append(' ')
             .Append(FromRelation?.Render(true))
-            .Append(Link.Render())
+            .Append(RelationLink.Render())
             .Append(ToRelation?.Render(false))
             .Append(' ');
         

@@ -14,4 +14,8 @@ public interface IClass : IRenderTo<StringBuilder>
     IClassMemberFunction AddFunction(string name, ITypeName? returnType, Visibility? visibility, params FunctionArgument[] arguments);
 
     IClassMemberProperty AddProperty(string name, ITypeName? type, Visibility? visibility);
+
+    ICallback SetCallback(string function, string? tooltip);
+
+    ILink SetLink(Uri url, string? tooltip);
 }

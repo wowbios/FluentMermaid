@@ -14,7 +14,7 @@ public interface IClassDiagram
         Cardinality? cardinalityFrom,
         Relationship? relationshipTo,
         Cardinality? cardinalityTo,
-        Link link,
+        RelationLink relationLink,
         string? label);
 
     string Render();

@@ -39,7 +39,7 @@ Mermaid.js fluent api for .NET
    4. [Relationships](https://mermaid-js.github.io/mermaid/#/classDiagram?id=defining-relationship) :heavy_check_mark:
    5. [Cardinality / Multiplicity on relations](https://mermaid-js.github.io/mermaid/#/classDiagram?id=cardinality-multiplicity-on-relations) :heavy_check_mark:
    6. [Annotations](https://mermaid-js.github.io/mermaid/#/classDiagram?id=annotations-on-classes) :heavy_check_mark:
-   7. [Interaction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=interaction) :x:
+   7. [Interaction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=interaction) :heavy_check_mark:
    8. [Styling](https://mermaid-js.github.io/mermaid/#/classDiagram?id=styling) :x:
    9. Fluent API :x:
 4. [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram) :x:
