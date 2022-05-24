@@ -1,4 +1,6 @@
 # FluentMermaid
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/FluentMermaid)
+
 Mermaid.js fluent api for .NET
 
 ## Roadmap
