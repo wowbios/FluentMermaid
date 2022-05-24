@@ -2,7 +2,7 @@
 
 namespace FluentMermaid.ClassDiagram.Extensions;
 
-public static class StringBuilderExtensions
+internal static class StringBuilderExtensions
 {
     public static StringBuilder AppendValidName(this StringBuilder builder, string? name)
     {

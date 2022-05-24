@@ -2,7 +2,7 @@
 
 namespace FluentMermaid.ClassDiagram.Extensions;
 
-public static class VisibilityExtensions
+internal static class VisibilityExtensions
 {
     private static readonly Array VisibilityValues = Enum.GetValues(typeof(Visibility)); 
     

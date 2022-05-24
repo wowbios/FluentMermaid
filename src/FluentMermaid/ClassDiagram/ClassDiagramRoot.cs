@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using FluentMermaid.ClassDiagram.Enums;
 using FluentMermaid.ClassDiagram.Interfaces;
 using FluentMermaid.ClassDiagram.Interfaces.ClassMembers;
 using FluentMermaid.ClassDiagram.Nodes;
@@ -10,6 +11,7 @@ namespace FluentMermaid.ClassDiagram;
 internal class ClassDiagramRoot : IClassDiagram
 {
     private readonly List<IClass> _classes = new();
+    private readonly List<IRelation> _relations = new();
     
     public ClassDiagramRoot(Orientation orientation)
     {
@@ -27,12 +29,32 @@ internal class ClassDiagramRoot : IClassDiagram
         return @class;
     }
 
+    public IRelation Relation(
+        IClass @from,
+        IClass to,
+        Relationship? relationshipFrom,
+        Relationship? relationshipTo,
+        Link link,
+        string? label)
+    {
+        var relation = new RelationNode(
+            from,
+            to,
+            relationshipFrom,
+            link,
+            relationshipTo,
+            label);
+        _relations.Add(relation);
+        return relation;
+    }
+
     public string Render()
     {
         StringBuilder builder = new();
         builder.AppendLine("classDiagram");
         builder.Append("direction ").AppendLine(Orientation.Render());
-
+        
+        _relations.ForEach(r => r.RenderTo(builder));
         _classes.ForEach(c => c.RenderTo(builder));
 
         return builder.ToString();
