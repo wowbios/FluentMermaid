@@ -5,6 +5,8 @@
 
 Mermaid.js fluent api for .NET
 
+Tested with Mermaid v9.1.1
+
 ## Roadmap
 1. [Flowchart](https://mermaid-js.github.io/mermaid/#/flowchart)
    1. [Graph](https://mermaid-js.github.io/mermaid/#/flowchart?id=graph) :heavy_check_mark:
