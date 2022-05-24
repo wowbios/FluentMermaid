@@ -5,7 +5,7 @@ namespace FluentMermaid.ClassDiagram.Interfaces;
 
 public interface IClassDiagram
 {
-    IClass AddClass(ITypeName typeName, string? annotation);
+    IClass AddClass(ITypeName typeName, string? annotation, string? cssClass);
 
     IRelation Relation(
         IClass from,

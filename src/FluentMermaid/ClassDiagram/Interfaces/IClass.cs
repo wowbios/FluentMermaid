@@ -10,6 +10,8 @@ public interface IClass : IRenderTo<StringBuilder>
     ITypeName Name { get; }
     
     string? Annotation { get; }
+    
+    string? CssClass { get; }
 
     IClassMemberFunction AddFunction(string name, ITypeName? returnType, Visibility? visibility, params FunctionArgument[] arguments);
 
