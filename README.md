@@ -33,7 +33,7 @@ Tested with Mermaid v9.1.1
    8. [Background highlighting](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=background-highlighting) :heavy_check_mark:
    9. [SequenceNumbers](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=sequencenumbers) :heavy_check_mark:
    10. [Participant menus](https://mermaid-js.github.io/mermaid/#/sequenceDiagram?id=actor-menus) :heavy_check_mark:
-   11. Fluent API :x:
+   11. Fluent API :heavy_check_mark:
 3. [Class diagram](https://mermaid-js.github.io/mermaid/#/classDiagram) :x:
    1. [Direction](https://mermaid-js.github.io/mermaid/#/classDiagram?id=setting-the-direction-of-the-diagram) :heavy_check_mark:
    2. [Classes](https://mermaid-js.github.io/mermaid/#/classDiagram?id=define-a-class) :heavy_check_mark:
