@@ -7,25 +7,27 @@ public interface ISequenceDiagram
 {
     IMember AddMember(string name, MemberType type);
 
-    void Message(IMember from, IMember to, string text, MessageType type);
+    ISequenceDiagram Message(IMember from, IMember to, string text, MessageType type);
 
-    void Activate(IMember member, Action<ISequenceDiagram> action);
+    IMessaging Messaging(IMember from, IMember to);
 
-    void Loop(string? title, Action<ISequenceDiagram> action);
+    ISequenceDiagram Activate(IMember member, Action<ISequenceDiagram> action);
 
-    void AltOr(string? altTitle, Action<ISequenceDiagram> altAction, string? orTitle, Action<ISequenceDiagram> orAction);
+    ISequenceDiagram Loop(string? title, Action<ISequenceDiagram> action);
 
-    void Optional(string? title, Action<ISequenceDiagram> action);
+    ISequenceDiagram AltOr(string? altTitle, Action<ISequenceDiagram> altAction, string? orTitle, Action<ISequenceDiagram> orAction);
 
-    void Note(IMember member, NoteLocation location, string text);
+    ISequenceDiagram Optional(string? title, Action<ISequenceDiagram> action);
 
-    void NoteOver(string text, params IMember[] members);
+    ISequenceDiagram Note(IMember member, NoteLocation location, string text);
 
-    void Parallel(IEnumerable<(string? title, Action<ISequenceDiagram>? action)> blocks);
+    ISequenceDiagram NoteOver(string text, params IMember[] members);
 
-    void Parallel(params (string? title, Action<ISequenceDiagram>? action)[] blocks);
+    ISequenceDiagram Parallel(IEnumerable<(string? title, Action<ISequenceDiagram>? action)> blocks);
 
-    void Rect(Color color, Action<ISequenceDiagram> action);
+    ISequenceDiagram Parallel(params (string? title, Action<ISequenceDiagram>? action)[] blocks);
 
-    string Render();
+    ISequenceDiagram Rect(Color color, Action<ISequenceDiagram> action);
+
+    string Build();
 }
