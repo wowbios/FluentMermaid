@@ -46,6 +46,6 @@ Mermaid.js fluent api for .NET
 5. [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram) :x:
 6. [User journey](https://mermaid-js.github.io/mermaid/#/user-journey) :x:
 7. [Gantt](https://mermaid-js.github.io/mermaid/#/gantt) :x:
-8. [Pie chart](https://mermaid-js.github.io/mermaid/#/pie) :x:
+8. [Pie chart](https://mermaid-js.github.io/mermaid/#/pie) :heavy_check_mark:
 9. [Requirement](https://mermaid-js.github.io/mermaid/#/requirementDiagram) :x:
 10. [Git graph](https://mermaid-js.github.io/mermaid/#/gitgraph) :x:
