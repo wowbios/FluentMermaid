@@ -1,6 +1,6 @@
 # FluentMermaid
 ![GitHub](https://img.shields.io/github/license/wowbios/FluentMermaid)
-[[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/FluentMermaid)](https://img.shields.io/nuget/v/FluentMermaid)](https://img.shields.io/nuget/v/FluentMermaid?color=blue)
+![Nuget](https://img.shields.io/nuget/v/FluentMermaid?color=blue)
 
 .NET api for generating mermaid syntax markdown that then could be rendered with [Mermaid.js](https://mermaid-js.github.io/mermaid/#/)
 
