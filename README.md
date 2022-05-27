@@ -2,10 +2,13 @@
 ![GitHub](https://img.shields.io/github/license/wowbios/FluentMermaid)
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/FluentMermaid)
 
+.NET api for generating mermaid syntax markdown that then could be rendered with [Mermaid.js](https://mermaid-js.github.io/mermaid/#/)
 
-Mermaid.js fluent api for .NET
+Supported platforms: `.netstandard 2.0`
 
-Tested with Mermaid v9.1.1
+Tested with Mermaid js v9.1.1
+
+### For examples look at [WIKI repo page](https://github.com/wowbios/FluentMermaid/wiki/Flowchart)
 
 # Roadmap
 - [x] [Flowchart](https://mermaid-js.github.io/mermaid/#/flowchart)
