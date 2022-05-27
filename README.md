@@ -8,7 +8,7 @@ Supported platforms: `.netstandard 2.0`
 
 Tested with Mermaid js v9.1.1
 
-### For examples look at [WIKI repo page](https://github.com/wowbios/FluentMermaid/wiki/Flowchart)
+### For examples look at [WIKI repo page](https://github.com/wowbios/FluentMermaid/wiki/)
 
 # Roadmap
 - [x] [Flowchart](https://mermaid-js.github.io/mermaid/#/flowchart)
