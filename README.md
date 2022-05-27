@@ -60,8 +60,13 @@ Done
 
 ## Roadmap
 [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram) :x:
+
 [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram) :x:
+
 [User journey](https://mermaid-js.github.io/mermaid/#/user-journey) :x:
+
 [Gantt](https://mermaid-js.github.io/mermaid/#/gantt) :x:
+
 [Requirement](https://mermaid-js.github.io/mermaid/#/requirementDiagram) :x:
+
 [Git graph](https://mermaid-js.github.io/mermaid/#/gitgraph) :x:
