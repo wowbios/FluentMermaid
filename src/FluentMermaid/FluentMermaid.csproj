@@ -9,7 +9,7 @@
     
     <PropertyGroup>
         <PackageId>FluentMermaid</PackageId>
-        <PackageVersion>0.0.2-alpha</PackageVersion>
+        <PackageVersion>0.1.0</PackageVersion>
         <Authors>Aleksey Vyushkov (wowbios)</Authors>
         <Description>.NET api for generating mermaid syntax diagrams</Description>
         <PackageProjectUrl>https://github.com/wowbios/FluentMermaid</PackageProjectUrl>
@@ -17,9 +17,8 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>mermaid js syntax diagram</PackageTags>
         <PackageReleaseNotes>
-            1. Flowchart
-            2. Sequence diagram
-            3. Class diagram
+            1. Pie chart diagram support
+            2. Sequence diagram fluent API
         </PackageReleaseNotes>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
