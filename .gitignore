@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Rider
 .idea/
+
+# CSPROJ bin/obj
+bin/
+obj/
