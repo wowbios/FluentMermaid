@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+<script type="text/javascript">
+    mermaid.initialize({
+        startOnLoad: true,
+        securityLevel: 'loose',
+        htmlLabels:true});
+</script>
+
+
+<div class="text-center">
+    <h1 class="display-4">FluentMermaid ASP.NET MVC</h1>
+    <div id="mermaid" class="mermaid">
+        @ViewData["diagram"]
+    </div>
+</div>

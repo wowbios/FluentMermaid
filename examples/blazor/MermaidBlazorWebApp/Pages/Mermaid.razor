@@ -1,0 +1,28 @@
+﻿@page "/Mermaid"
+@inject IHttpClientFactory ClientFactory
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+<h3>Mermaid</h3>
+
+<button class="btn btn-primary" @onclick="OnLoad">Load</button>
+
+<div id="mermaid" class="mermaid"></div>
+
+<h1>Raw</h1>
+<div>@_raw</div>
+
+
+@code {
+    MarkupString _raw;
+    private string? _mermaidText;
+
+    private async Task OnLoad()
+    {
+        var client = ClientFactory.CreateClient();
+        var uri = new Uri(new Uri(NavigationManager.BaseUri), "/api/Mermaid");
+        var result = await client.GetAsync(uri);
+        _mermaidText = await result.Content.ReadAsStringAsync();
+        _raw = new MarkupString(_mermaidText.Replace("\n", "<br/>"));
+        await JS.InvokeVoidAsync("reset_mermaid", _mermaidText);
+    }
+}
