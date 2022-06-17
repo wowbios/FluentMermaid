@@ -22,7 +22,7 @@ internal sealed class StateDiagramComposite : StateDiagram, ICompositeState
     {
         builder
             .Append("state ")
-            .Append(Id)
+            .Append(Description)
             .AppendLine(" {")
             .Append("direction ")
             .AppendLine(Orientation.Render());

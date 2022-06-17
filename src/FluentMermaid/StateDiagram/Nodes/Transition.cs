@@ -31,6 +31,8 @@ internal sealed class Transition : ITransition
         if (!string.IsNullOrWhiteSpace(Description))
             builder
                 .Append(" : ")
-                .AppendLine(Description);
+                .Append(Description);
+
+        builder.AppendLine();
     }
 }

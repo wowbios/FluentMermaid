@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using FluentMermaid.Enums;
 using FluentMermaid.StateDiagram.Enum;
+using FluentMermaid.StateDiagram.Extensions;
 using FluentMermaid.StateDiagram.Interfaces;
 
 namespace FluentMermaid.StateDiagram.Nodes;
@@ -18,15 +19,6 @@ internal abstract class StateDiagram : IStateDiagram
 
     public Orientation Orientation { get; }
 
-    protected void RenderNodes(StringBuilder builder)
-    {
-        _states.ForEach(state => state.RenderTo(builder));
-        _transitions.ForEach(transition => transition.RenderTo(builder));
-        _notes.ForEach(note => note.RenderTo(builder));
-    }
-
-    protected virtual string GenerateStateId() => "s" + _states.Count;
-
     public IState AddState(string description)
     {
         if (string.IsNullOrWhiteSpace(description))
@@ -42,7 +34,12 @@ internal abstract class StateDiagram : IStateDiagram
 
     public ICompositeState AddCompositeState(string description, Orientation orientation)
     {
-        var composition = new StateDiagramComposite("Sub" + GenerateStateId(), description, orientation);
+        if (string.IsNullOrWhiteSpace(description))
+            throw new ArgumentException("Description must be set");
+
+        description = description.ToValidId();
+        
+        var composition = new StateDiagramComposite(description, description, orientation);
         _states.Add(composition);
         return composition;
     }
@@ -99,4 +96,13 @@ internal abstract class StateDiagram : IStateDiagram
     }
 
     public abstract string Render();
+    
+    protected void RenderNodes(StringBuilder builder)
+    {
+        _states.ForEach(state => state.RenderTo(builder));
+        _transitions.ForEach(transition => transition.RenderTo(builder));
+        _notes.ForEach(note => note.RenderTo(builder));
+    }
+
+    protected virtual string GenerateStateId() => "s" + _states.Count;
 }
