@@ -12,10 +12,8 @@ Tested with Mermaid js v9.1.1
 
 # Roadmap
 - [x] [Flowchart](https://mermaid-js.github.io/mermaid/#/flowchart) 
-- [ ] Flowchart fluent API https://github.com/wowbios/FluentMermaid/issues/15
 - [x] [Sequence diagram](https://mermaid-js.github.io/mermaid/#/sequenceDiagram)
 - [x] [Class diagram](https://mermaid-js.github.io/mermaid/#/classDiagram)
-- [ ] Class diagram fluent API https://github.com/wowbios/FluentMermaid/issues/16
 - [x] [Pie chart](https://mermaid-js.github.io/mermaid/#/pie)
 - [x] [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram)
 - [ ] [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram) https://github.com/wowbios/FluentMermaid/issues/18
@@ -23,3 +21,5 @@ Tested with Mermaid js v9.1.1
 - [ ] [Gantt](https://mermaid-js.github.io/mermaid/#/gantt) https://github.com/wowbios/FluentMermaid/issues/20
 - [ ] [Requirement](https://mermaid-js.github.io/mermaid/#/requirementDiagram) https://github.com/wowbios/FluentMermaid/issues/21
 - [ ] [Git graph](https://mermaid-js.github.io/mermaid/#/gitgraph) https://github.com/wowbios/FluentMermaid/issues/22
+- [ ] Flowchart fluent API https://github.com/wowbios/FluentMermaid/issues/15
+- [ ] Class diagram fluent API https://github.com/wowbios/FluentMermaid/issues/16
