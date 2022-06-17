@@ -15,7 +15,7 @@ Tested with Mermaid js v9.1.1
 - [x] [Sequence diagram](https://mermaid-js.github.io/mermaid/#/sequenceDiagram)
 - [x] [Class diagram](https://mermaid-js.github.io/mermaid/#/classDiagram)
 - [x] [Pie chart](https://mermaid-js.github.io/mermaid/#/pie)
-- [ ] [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram)
+- [x] [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram)
 - [ ] [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram)
 - [ ] [User journey](https://mermaid-js.github.io/mermaid/#/user-journey)
 - [ ] [Gantt](https://mermaid-js.github.io/mermaid/#/gantt)
