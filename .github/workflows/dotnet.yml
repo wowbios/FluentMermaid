@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore src\FluentMermaidLibrary.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test src\FluentMermaidLibrary.sln --no-build --verbosity normal 
