@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore src\FluentMermaidLibrary.sln
+      run: dotnet restore src/FluentMermaidLibrary.sln
     - name: Build
-      run: dotnet build --no-restore src\FluentMermaidLibrary.sln
+      run: dotnet build --no-restore src/FluentMermaidLibrary.sln
     - name: Test
-      run: dotnet test src\FluentMermaidLibrary.sln --no-build --verbosity normal 
+      run: dotnet test src/FluentMermaidLibrary.sln --no-build --verbosity normal 
