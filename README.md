@@ -16,7 +16,7 @@ Tested with Mermaid js v9.1.1
 - [x] [Class diagram](https://mermaid-js.github.io/mermaid/#/classDiagram)
 - [x] [Pie chart](https://mermaid-js.github.io/mermaid/#/pie)
 - [x] [State diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram)
-- [ ] [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram) https://github.com/wowbios/FluentMermaid/issues/18
+- [x] [Entity relationship](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram) https://github.com/wowbios/FluentMermaid/issues/18
 - [ ] [User journey](https://mermaid-js.github.io/mermaid/#/user-journey) https://github.com/wowbios/FluentMermaid/issues/19
 - [ ] [Gantt](https://mermaid-js.github.io/mermaid/#/gantt) https://github.com/wowbios/FluentMermaid/issues/20
 - [ ] [Requirement](https://mermaid-js.github.io/mermaid/#/requirementDiagram) https://github.com/wowbios/FluentMermaid/issues/21
