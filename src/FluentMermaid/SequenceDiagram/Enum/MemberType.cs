@@ -1,7 +1,13 @@
-﻿namespace FluentMermaid.SequenceDiagram.Enum;
+namespace FluentMermaid.SequenceDiagram.Enum;
 
 public enum MemberType
 {
     Participant,
-    Actor
+    Actor,
+    Boundary,
+    Control,
+    Entity,
+    Database,
+    Collections,
+    Queue
 }

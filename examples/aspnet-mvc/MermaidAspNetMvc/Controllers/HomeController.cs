@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using FluentMermaid.SequenceDiagram;
 using FluentMermaid.SequenceDiagram.Enum;
 using FluentMermaid.SequenceDiagram.Interfaces;
@@ -44,12 +44,25 @@ public class HomeController : Controller
         
         IMember bob = builder.AddMember("Bob", MemberType.Participant);
         bob.AddLink("Wiki", new Uri("https://wiki.contoso.com/alice"));
+        IMember kitchen = builder.AddMember("KitchenService", MemberType.Control);
+        IMember pantryDb = builder.AddMember("PantryDb", MemberType.Database);
     
         builder.AltOr(
             "Alice hungry",
             diagram => diagram.Message(alice, bob, "Wait Bob, I need something to eat", MessageType.Solid),
             "Alice not hungry",
             diagram => diagram.Message(alice, bob, "Ok, let`s go", MessageType.Solid));
+
+        builder.Create(pantryDb);
+        builder.Box("Aqua", "Dinner prep", diagram =>
+        {
+            diagram.Critical(
+                "Order snack",
+                critical => critical.Message(kitchen, pantryDb, "Reserve ingredients", MessageType.SolidArrow),
+                ("Kitchen timeout", option => option.Break("Abort dinner", aborted => aborted.NoteOver("Order cancelled", alice, bob))),
+                ("Kitchen available", option => option.NoteOver("Snack is ready", alice, bob)));
+        });
+        builder.Destroy(pantryDb);
     
         builder.NoteOver("Teenagers", alice, bob);
 

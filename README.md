@@ -46,6 +46,34 @@ chart.EdgeStyling.LinkStyleDefault("color:blue");
 var mermaid = chart.Render();
 ```
 
+## Sequence API status (Mermaid v11)
+
+- Backward compatible API: existing `SequenceDiagramBuilder` calls (`AddMember`, `Message`, `Messaging`, `AltOr`, `Optional`, `Parallel`, `Rect`, `Build`) are preserved.
+- New additive API: `Alt(... elseBlocks ...)`, `Break(...)`, `Critical(... options ...)`, `Box(...)`, `Create(...)`, `Destroy(...)`.
+- Mermaid v11 additions: participant stereotypes (`boundary/control/entity/database/collections/queue`) and additional message arrows (bidirectional and half-arrows).
+
+### Quick sequence example
+
+```csharp
+using FluentMermaid.SequenceDiagram;
+using FluentMermaid.SequenceDiagram.Enum;
+
+var sequence = new SequenceDiagramBuilder(autoNumber: true);
+var api = sequence.AddMember("API", MemberType.Control);
+var db = sequence.AddMember("DB", MemberType.Database);
+
+sequence.Create(db);
+sequence.Box("Aqua", "Persistence", d =>
+{
+    d.Critical("Write transaction", c => c.Message(api, db, "INSERT", MessageType.SolidArrow),
+        ("Timeout", o => o.Break("Abort", b => b.Note(api, NoteLocation.RightOf, "rollback"))),
+        ("OK", o => o.NoteOver("committed", api, db)));
+});
+sequence.Destroy(db);
+
+var mermaid = sequence.Build();
+```
+
 # Roadmap
 - [x] [Flowchart](https://mermaid.js.org/syntax/flowchart.html)
 - [x] [Sequence diagram](https://mermaid.js.org/syntax/sequenceDiagram.html)
