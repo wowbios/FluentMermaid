@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Text;
 using FluentMermaid.SequenceDiagram.Actions;
 using FluentMermaid.SequenceDiagram.Enum;
@@ -31,6 +31,7 @@ public class SequenceDiagramBuilder : ISequenceDiagram
     {
         _ = @from ?? throw new ArgumentNullException(nameof(@from));
         _ = to ?? throw new ArgumentNullException(nameof(to));
+        _ = text ?? throw new ArgumentNullException(nameof(text));
 
         var message = new Message(from, to, text, type);
         _actions.Add(message);
@@ -70,14 +71,41 @@ public class SequenceDiagramBuilder : ISequenceDiagram
         _ = altAction ?? throw new ArgumentNullException(nameof(altAction));
         _ = orAction ?? throw new ArgumentNullException(nameof(orAction));
 
+        Alt(
+            altTitle,
+            altAction,
+            (orTitle, orAction));
+
+        return this;
+    }
+
+    public ISequenceDiagram Alt(
+        string? altTitle,
+        Action<ISequenceDiagram> altAction,
+        IEnumerable<(string? title, Action<ISequenceDiagram>? action)> elseBlocks)
+    {
+        _ = altAction ?? throw new ArgumentNullException(nameof(altAction));
+        _ = elseBlocks ?? throw new ArgumentNullException(nameof(elseBlocks));
+
         _actions.Add(new AltStart(altTitle));
         altAction(this);
-        _actions.Add(new OrStart(orTitle));
-        orAction(this);
+
+        foreach ((string? title, Action<ISequenceDiagram>? action) in elseBlocks)
+        {
+            _actions.Add(new OrStart(title));
+            action?.Invoke(this);
+        }
+
         _actions.Add(new End());
 
         return this;
     }
+
+    public ISequenceDiagram Alt(
+        string? altTitle,
+        Action<ISequenceDiagram> altAction,
+        params (string? title, Action<ISequenceDiagram>? action)[] elseBlocks)
+        => Alt(altTitle, altAction, elseBlocks.AsEnumerable());
 
     public ISequenceDiagram Optional(string? title, Action<ISequenceDiagram> action)
     {
@@ -90,8 +118,48 @@ public class SequenceDiagramBuilder : ISequenceDiagram
         return this;
     }
 
+    public ISequenceDiagram Break(string? title, Action<ISequenceDiagram> action)
+    {
+        _ = action ?? throw new ArgumentNullException(nameof(action));
+
+        _actions.Add(new BreakStart(title));
+        action(this);
+        _actions.Add(new End());
+
+        return this;
+    }
+
+    public ISequenceDiagram Critical(
+        string? title,
+        Action<ISequenceDiagram> criticalAction,
+        IEnumerable<(string? title, Action<ISequenceDiagram>? action)> options)
+    {
+        _ = criticalAction ?? throw new ArgumentNullException(nameof(criticalAction));
+        _ = options ?? throw new ArgumentNullException(nameof(options));
+
+        _actions.Add(new CriticalStart(title));
+        criticalAction(this);
+
+        foreach ((string? optionTitle, Action<ISequenceDiagram>? optionAction) in options)
+        {
+            _actions.Add(new OptionStart(optionTitle));
+            optionAction?.Invoke(this);
+        }
+
+        _actions.Add(new End());
+
+        return this;
+    }
+
+    public ISequenceDiagram Critical(
+        string? title,
+        Action<ISequenceDiagram> criticalAction,
+        params (string? title, Action<ISequenceDiagram>? action)[] options)
+        => Critical(title, criticalAction, options.AsEnumerable());
+
     public ISequenceDiagram Note(IMember member, NoteLocation location, string text)
     {
+        _ = member ?? throw new ArgumentNullException(nameof(member));
         if (string.IsNullOrWhiteSpace(text))
             throw new ArgumentException("Text should not be null or empty", nameof(text));
 
@@ -104,6 +172,11 @@ public class SequenceDiagramBuilder : ISequenceDiagram
     {
         if (string.IsNullOrWhiteSpace(text))
             throw new ArgumentException("Text should not be null or empty", nameof(text));
+        _ = members ?? throw new ArgumentNullException(nameof(members));
+        if (members.Length == 0)
+            throw new ArgumentException("At least one member should be provided", nameof(members));
+        if (members.Any(m => m is null))
+            throw new ArgumentException("Members should not contain null values", nameof(members));
         
         _actions.Add(new NoteOver(members, text));
 
@@ -123,6 +196,10 @@ public class SequenceDiagramBuilder : ISequenceDiagram
 
             isFirst = false;
         }
+
+        if (isFirst)
+            throw new ArgumentException("At least one parallel block should be provided", nameof(blocks));
+
         _actions.Add(new End());
 
         return this;
@@ -138,6 +215,41 @@ public class SequenceDiagramBuilder : ISequenceDiagram
         _actions.Add(new Rect(color));
         action(this);
         _actions.Add(new End());
+
+        return this;
+    }
+
+    public ISequenceDiagram Box(string? color, string? label, Action<ISequenceDiagram> action)
+    {
+        _ = action ?? throw new ArgumentNullException(nameof(action));
+
+        _actions.Add(new BoxStart(color, label));
+        action(this);
+        _actions.Add(new End());
+
+        return this;
+    }
+
+    public ISequenceDiagram Box(string? label, Action<ISequenceDiagram> action)
+        => Box(null, label, action);
+
+    public ISequenceDiagram Box(Action<ISequenceDiagram> action)
+        => Box(null, null, action);
+
+    public ISequenceDiagram Create(IMember member)
+    {
+        _ = member ?? throw new ArgumentNullException(nameof(member));
+
+        _actions.Add(new Create(member));
+
+        return this;
+    }
+
+    public ISequenceDiagram Destroy(IMember member)
+    {
+        _ = member ?? throw new ArgumentNullException(nameof(member));
+
+        _actions.Add(new Destroy(member));
 
         return this;
     }

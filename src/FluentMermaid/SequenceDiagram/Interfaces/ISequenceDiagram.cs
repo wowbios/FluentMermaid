@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using FluentMermaid.SequenceDiagram.Enum;
 
 namespace FluentMermaid.SequenceDiagram.Interfaces;
@@ -17,7 +17,29 @@ public interface ISequenceDiagram
 
     ISequenceDiagram AltOr(string? altTitle, Action<ISequenceDiagram> altAction, string? orTitle, Action<ISequenceDiagram> orAction);
 
+    ISequenceDiagram Alt(
+        string? altTitle,
+        Action<ISequenceDiagram> altAction,
+        IEnumerable<(string? title, Action<ISequenceDiagram>? action)> elseBlocks);
+
+    ISequenceDiagram Alt(
+        string? altTitle,
+        Action<ISequenceDiagram> altAction,
+        params (string? title, Action<ISequenceDiagram>? action)[] elseBlocks);
+
     ISequenceDiagram Optional(string? title, Action<ISequenceDiagram> action);
+
+    ISequenceDiagram Break(string? title, Action<ISequenceDiagram> action);
+
+    ISequenceDiagram Critical(
+        string? title,
+        Action<ISequenceDiagram> criticalAction,
+        IEnumerable<(string? title, Action<ISequenceDiagram>? action)> options);
+
+    ISequenceDiagram Critical(
+        string? title,
+        Action<ISequenceDiagram> criticalAction,
+        params (string? title, Action<ISequenceDiagram>? action)[] options);
 
     ISequenceDiagram Note(IMember member, NoteLocation location, string text);
 
@@ -28,6 +50,16 @@ public interface ISequenceDiagram
     ISequenceDiagram Parallel(params (string? title, Action<ISequenceDiagram>? action)[] blocks);
 
     ISequenceDiagram Rect(Color color, Action<ISequenceDiagram> action);
+
+    ISequenceDiagram Box(string? color, string? label, Action<ISequenceDiagram> action);
+
+    ISequenceDiagram Box(string? label, Action<ISequenceDiagram> action);
+
+    ISequenceDiagram Box(Action<ISequenceDiagram> action);
+
+    ISequenceDiagram Create(IMember member);
+
+    ISequenceDiagram Destroy(IMember member);
 
     string Build();
 }

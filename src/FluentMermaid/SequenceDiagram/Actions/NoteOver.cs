@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using FluentMermaid.SequenceDiagram.Enum;
 using FluentMermaid.SequenceDiagram.Extensions;
 using FluentMermaid.SequenceDiagram.Interfaces;
@@ -26,6 +26,6 @@ internal readonly struct NoteOver : IAction
             .Append(' ')
             .AppendJoin(',', Members.Select(m => m.Id))
             .Append(':')
-            .AppendLine(Text);
+            .AppendLine(Text.RenderText());
     }
 }

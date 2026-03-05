@@ -1,4 +1,4 @@
-﻿namespace FluentMermaid.SequenceDiagram.Enum;
+namespace FluentMermaid.SequenceDiagram.Enum;
 
 public enum MessageType
 {
@@ -9,5 +9,23 @@ public enum MessageType
     SolidCross,
     DottedCross,
     SolidOpenArrow,
-    DottedOpenArrow
+    DottedOpenArrow,
+    SolidBidirectionalArrow,
+    DottedBidirectionalArrow,
+    SolidTopHalfArrow,
+    DottedTopHalfArrow,
+    SolidBottomHalfArrow,
+    DottedBottomHalfArrow,
+    SolidReverseTopHalfArrow,
+    DottedReverseTopHalfArrow,
+    SolidReverseBottomHalfArrow,
+    DottedReverseBottomHalfArrow,
+    SolidTopStickHalfArrow,
+    DottedTopStickHalfArrow,
+    SolidBottomStickHalfArrow,
+    DottedBottomStickHalfArrow,
+    SolidReverseTopStickHalfArrow,
+    DottedReverseTopStickHalfArrow,
+    SolidReverseBottomStickHalfArrow,
+    DottedReverseBottomStickHalfArrow
 }

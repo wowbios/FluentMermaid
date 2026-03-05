@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using FluentMermaid.SequenceDiagram.Enum;
 using FluentMermaid.SequenceDiagram.Extensions;
 using FluentMermaid.SequenceDiagram.Interfaces;
@@ -34,6 +34,6 @@ internal readonly struct Message : IAction
             .Append(Type.Render())
             .Append(To.Id)
             .Append(": ")
-            .AppendLine(Text);
+            .AppendLine(Text.RenderText());
     }
 }

@@ -1,4 +1,4 @@
-﻿using FluentMermaid.SequenceDiagram.Enum;
+using FluentMermaid.SequenceDiagram.Enum;
 
 namespace FluentMermaid.SequenceDiagram.Extensions;
 
@@ -15,6 +15,24 @@ public static class MessageTypeExtensions
             MessageType.DottedCross => "--x",
             MessageType.SolidOpenArrow => "-)",
             MessageType.DottedOpenArrow => "--)",
+            MessageType.SolidBidirectionalArrow => "<<->>",
+            MessageType.DottedBidirectionalArrow => "<<-->>",
+            MessageType.SolidTopHalfArrow => "-|\\",
+            MessageType.DottedTopHalfArrow => "--|\\",
+            MessageType.SolidBottomHalfArrow => "-|/",
+            MessageType.DottedBottomHalfArrow => "--|/",
+            MessageType.SolidReverseTopHalfArrow => "/|-",
+            MessageType.DottedReverseTopHalfArrow => "/|--",
+            MessageType.SolidReverseBottomHalfArrow => "\\|-",
+            MessageType.DottedReverseBottomHalfArrow => "\\|--",
+            MessageType.SolidTopStickHalfArrow => "-\\\\",
+            MessageType.DottedTopStickHalfArrow => "--\\\\",
+            MessageType.SolidBottomStickHalfArrow => "-//",
+            MessageType.DottedBottomStickHalfArrow => "--//",
+            MessageType.SolidReverseTopStickHalfArrow => "//-",
+            MessageType.DottedReverseTopStickHalfArrow => "//--",
+            MessageType.SolidReverseBottomStickHalfArrow => "\\\\-",
+            MessageType.DottedReverseBottomStickHalfArrow => "\\\\--",
             _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
         };
 }
