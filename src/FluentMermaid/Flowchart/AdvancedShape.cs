@@ -1,0 +1,52 @@
+namespace FluentMermaid.Flowchart;
+
+public static class AdvancedShape
+{
+    public const string Bang = "bang";
+    public const string NotchedRectangle = "notch-rect";
+    public const string Cloud = "cloud";
+    public const string Hourglass = "hourglass";
+    public const string Bolt = "bolt";
+    public const string BraceLeft = "brace-l";
+    public const string BraceRight = "brace-r";
+    public const string Braces = "braces";
+    public const string LeanRight = "lean-r";
+    public const string LeanLeft = "lean-l";
+    public const string Cylinder = "cyl";
+    public const string Diamond = "diam";
+    public const string Delay = "delay";
+    public const string HorizontalCylinder = "h-cyl";
+    public const string LinedCylinder = "lin-cyl";
+    public const string CurvedTrapezoid = "curv-trap";
+    public const string DividedRectangle = "div-rect";
+    public const string Document = "doc";
+    public const string RoundedRectangle = "rounded";
+    public const string Triangle = "tri";
+    public const string Fork = "fork";
+    public const string WindowPane = "win-pane";
+    public const string FilledCircle = "f-circ";
+    public const string LinedDocument = "lin-doc";
+    public const string LinedRectangle = "lin-rect";
+    public const string NotchedPentagon = "notch-pent";
+    public const string FlippedTriangle = "flip-tri";
+    public const string SlopedRectangle = "sl-rect";
+    public const string InvertedTrapezoid = "trap-t";
+    public const string StackedDocuments = "docs";
+    public const string StackedRectangle = "st-rect";
+    public const string Odd = "odd";
+    public const string Flag = "flag";
+    public const string Hexagon = "hex";
+    public const string Trapezoid = "trap-b";
+    public const string Rectangle = "rect";
+    public const string Circle = "circle";
+    public const string SmallCircle = "sm-circ";
+    public const string DoubleCircle = "dbl-circ";
+    public const string FramedCircle = "fr-circ";
+    public const string BowTieRectangle = "bow-rect";
+    public const string FramedRectangle = "fr-rect";
+    public const string CrossedCircle = "cross-circ";
+    public const string TaggedDocument = "tag-doc";
+    public const string TaggedRectangle = "tag-rect";
+    public const string Stadium = "stadium";
+    public const string Text = "text";
+}

@@ -1,4 +1,4 @@
-﻿namespace FluentMermaid.Flowchart.Enum;
+namespace FluentMermaid.Flowchart.Enum;
 
 public enum Link
 {
@@ -16,11 +16,21 @@ public enum Link
     /// -.-
     /// </summary>
     Dotted,
+
+    /// <summary>
+    /// -.->
+    /// </summary>
+    DottedArrow,
     
     /// <summary>
     /// ==>
     /// </summary>
     Thick,
+
+    /// <summary>
+    /// ===
+    /// </summary>
+    ThickOpen,
     
     /// <summary>
     /// --o
@@ -46,4 +56,9 @@ public enum Link
     /// x--x
     /// </summary>
     CrossDouble,
+
+    /// <summary>
+    /// ~~~
+    /// </summary>
+    Invisible,
 }

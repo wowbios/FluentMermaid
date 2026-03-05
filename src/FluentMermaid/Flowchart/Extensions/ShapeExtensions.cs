@@ -1,4 +1,4 @@
-﻿using FluentMermaid.Flowchart.Enum;
+using FluentMermaid.Flowchart.Enum;
 
 namespace FluentMermaid.Flowchart.Extensions;
 
@@ -7,6 +7,7 @@ internal static class ShapeExtensions
     public static string RenderStart(this Shape shape)
         => shape switch
         {
+            Shape.Rectangle => "[",
             Shape.RoundEdges => "(",
             Shape.Stadium => "([",
             Shape.Subroutine => "[[",
@@ -26,6 +27,7 @@ internal static class ShapeExtensions
     public static string RenderEnd(this Shape shape)
         => shape switch
         {
+            Shape.Rectangle => "]",
             Shape.RoundEdges => ")",
             Shape.Stadium => "])",
             Shape.Subroutine => "]]",
