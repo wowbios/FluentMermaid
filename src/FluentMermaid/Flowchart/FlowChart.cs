@@ -1,4 +1,4 @@
-﻿using FluentMermaid.Enums;
+using FluentMermaid.Enums;
 using FluentMermaid.Flowchart.Interfaces;
 using FluentMermaid.Flowchart.Nodes;
 
@@ -7,4 +7,6 @@ namespace FluentMermaid.Flowchart;
 public static class FlowChart
 {
     public static IFlowChart Create(Orientation orientation) => new FlowchartRootNode(orientation);
+
+    public static IFlowChartAdvanced CreateAdvanced(Orientation orientation) => new FlowchartRootNode(orientation);
 }

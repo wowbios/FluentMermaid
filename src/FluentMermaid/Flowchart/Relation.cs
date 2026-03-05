@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using FluentMermaid.Extensions;
 using FluentMermaid.Flowchart.Enum;
 using FluentMermaid.Flowchart.Extensions;
@@ -12,13 +12,15 @@ internal record Relation : IRenderTo<StringBuilder>
         INode to,
         Link link,
         string text,
-        int length)
+        int length,
+        string? edgeId = null)
     {
         From = @from;
         To = to;
         Text = text;
         Length = length;
         Link = link;
+        EdgeId = edgeId;
     }
 
     public INode From { get; }
@@ -31,11 +33,16 @@ internal record Relation : IRenderTo<StringBuilder>
 
     public int Length { get; }
 
+    public string? EdgeId { get; }
+
     public void RenderTo(StringBuilder builder)
     {
         builder
             .Append(From.Id)
             .Append(' ');
+
+        if (!string.IsNullOrWhiteSpace(EdgeId))
+            builder.Append(EdgeId).Append('@');
 
         Link.RenderTo(builder, Length);
         builder.Append(' ');

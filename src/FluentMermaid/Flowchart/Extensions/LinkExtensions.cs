@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using FluentMermaid.Flowchart.Enum;
 
 namespace FluentMermaid.Flowchart.Extensions;
@@ -19,9 +19,15 @@ internal static class LinkExtensions
                 RenderSingle('-', "--");
                 break;
             case Link.Dotted:
-                RenderDouble("-.", '.', "-");
+                RenderDouble("-", '.', "-");
+                break;
+            case Link.DottedArrow:
+                RenderDouble("-", '.', "->");
                 break;
             case Link.Thick:
+                RenderSingle('=', "=>");
+                break;
+            case Link.ThickOpen:
                 RenderSingle('=', "==");
                 break;
             case Link.Circle:
@@ -38,6 +44,11 @@ internal static class LinkExtensions
                 break;
             case Link.CrossDouble:
                 RenderDouble("x", '-', "-x");
+                break;
+            case Link.Invisible:
+                for (var i = 0; i < length + 2; i++)
+                    builder.Append('~');
+
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(link), link, null);

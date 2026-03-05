@@ -1,7 +1,8 @@
-﻿namespace FluentMermaid.Flowchart.Enum;
+namespace FluentMermaid.Flowchart.Enum;
 
 public enum Shape
 {
+    Rectangle,
     RoundEdges,
     Stadium,
     Subroutine,
